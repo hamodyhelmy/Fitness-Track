@@ -1,0 +1,200 @@
+/* Section Styles */
+section {
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+    background-color: var(--card-background); /* Ensure section background consistency */
+}
+
+section h2, section h3 {
+    color: var(--primary-color);
+    animation: fadeInDown 0.5s ease;
+}
+
+section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color); /* Ensure text visibility */
+    animation: fadeInUp 0.5s ease;
+}
+
+/* Form Styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    animation: fadeIn 0.5s ease;
+    box-sizing: border-box; /* Prevent overflow issues */
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    outline: none;
+    background: var(--input-background);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    box-sizing: border-box; /* Prevent padding issues */
+}
+
+form input:focus {
+    box-shadow: 0 0 10px var(--shadow-color);
+    border-color: var(--primary-color); /* Focus border effect */
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.3s ease;
+}
+
+form button:hover {
+    background: darken(var(--secondary-color), 10%);
+    transform: scale(1.05); /* Button hover effect */
+}
+
+form button:focus {
+    outline: none;
+}
+
+/* Links */
+form p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+form p a:hover {
+    color: darken(var(--primary-color), 10%);
+}
+
+/* Password visibility container adjustments */
+.password-container {
+    position: relative;
+    display: flex; /* Use flex for alignment */
+    align-items: center;
+    width: 100%; /* Ensure container takes up full width */
+}
+
+.password-container input {
+    width: 100%; /* Ensure input stretches across the container */
+    padding-right: 40px; /* Create space for the eye icon */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+#togglePassword, #toggleSignupPassword {
+    position: absolute;
+    right: 10px; /* Align icon to the right */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+    }
+
+    form button {
+        font-size: 0.9rem;
+    }
+
+    form label {
+        font-size: 0.9rem;
+    }
+
+    form input {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .password-container input {
+        font-size: 0.9rem;
+        padding: 8px 40px 8px 10px; /* Adjust padding for smaller screens */
+    }
+
+    #togglePassword, #toggleSignupPassword {
+        font-size: 18px; /* Adjust icon size for smaller screens */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    form {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1025px) {
+    form {
+        padding: 25px;
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    --card-background: #121212;
+    --primary-color: #00c9a7;
+    --secondary-color: #f44336;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --input-background: #333;
+    --text-color: #fff;
+}
+
+body.dark-mode section {
+    background-color: #1a1a2e; /* Dark mode section background */
+}
+
+body.dark-mode form {
+    background-color: #90caf9; /* Form background in dark mode */
+}
+
+body.dark-mode form input {
+    background-color: #333; /* Input background in dark mode */
+    color: #eaeaea; /* Text color in dark mode */
+}
+
+body.dark-mode form button {
+    background-color: #eaeaea; /* Button color in dark mode */
+    color: #333; /* Text color for buttons in dark mode */
+}
+
+body.dark-mode form button:hover {
+    background-color: darken(#eaeaea, 10%); /* Button hover color */
+}

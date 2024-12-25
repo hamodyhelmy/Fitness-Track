@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+{% endblock %}
+{% block content %}
+<h2>Login</h2>
+<form id="loginForm" method="POST" action="{{ url_for('bp.login') }}">
+    <label for="loginIdentifier">Username or Email:</label>
+    <input type="text" id="loginIdentifier" name="identifier" required><br><br>
+
+    <label for="loginPassword">Password:</label>
+    <div class="password-container">
+        <input type="password" id="loginPassword" name="password" required>
+        <span id="togglePassword">👁️</span> 
+    </div><br>
+
+    <button type="submit">Login</button>
+</form>
+{% if message %}
+    <p style="color: red;">{{ message }}</p>
+{% endif %}
+<p>Don't have an account? <a href="{{ url_for('bp.signup') }}">Sign up here</a></p>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}  <!-- Include the parent block content -->
+<script src="{{ url_for('static', filename='js/login.js') }}" defer></script>
+<script src="{{ url_for('static', filename='js/settings.js') }}" defer></script>
+{% endblock %}

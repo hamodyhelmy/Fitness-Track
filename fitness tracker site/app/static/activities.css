@@ -1,0 +1,172 @@
+/* Section Styles */
+section {
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+    background-color: var(--card-background); /* Ensure background color */
+}
+
+section h2, section h3 {
+    color: var(--primary-color);
+    animation: fadeInDown 0.5s ease;
+}
+
+section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color); /* Ensure text is visible in both light/dark modes */
+    animation: fadeInUp 0.5s ease;
+}
+
+/* Input and Button */
+input[type="text"] {
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    width: 60%;
+    margin-right: 10px;
+    outline: none;
+    transition: box-shadow 0.3s, border-color 0.3s ease;
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 10px var(--shadow-color);
+    border-color: var(--primary-color); /* Focus border color */
+}
+
+button {
+    padding: 10px 20px;
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.3s ease;
+}
+
+button:hover {
+    background: darken(var(--secondary-color), 10%);
+    transform: scale(1.05); /* Hover scale effect */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Select */
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--primary-color);
+    background: var(--card-background);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Activity List */
+ul#activityList {
+    list-style: none;
+    padding: 0;
+    animation: fadeIn 0.5s ease;
+}
+
+ul#activityList li {
+    background: var(--card-background);
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: var(--text-color); /* Ensure text color is readable */
+}
+
+ul#activityList li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px var(--shadow-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    input[type="text"] {
+        width: 80%; /* Increase width on smaller screens */
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    ul#activityList li {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    input[type="text"] {
+        width: 70%; /* Adjust width on medium screens */
+    }
+
+    section {
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1025px) {
+    input[type="text"] {
+        width: 60%; /* Keep width at 60% for larger screens */
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    --card-background: #121212;
+    --primary-color: #00c9a7;
+    --secondary-color: #f44336;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --text-color: #eaeaea;
+}
+
+body.dark-mode section {
+    background-color: #1a1a2e; /* Dark mode section background */
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode select {
+    background-color: #333;
+    color: #eaeaea;
+    border: 2px solid var(--primary-color);
+}
+
+body.dark-mode button {
+    background: #eaeaea;
+    color: #333;
+}
+
+body.dark-mode button:hover {
+    background: darken(#eaeaea, 10%);
+}
+
+/* End of activities.css */

@@ -1,0 +1,146 @@
+/* Header */
+h2 {
+    font-size: 2rem;
+    margin-top: 20px;
+    color: var(--primary-color);
+}
+
+/* Sections */
+section {
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 80%;
+    text-align: center;
+    background-color: var(--card-background);
+    color: var(--text-color); /* Ensure text color contrasts well */
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+section:hover {
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: white;  /* Button text color */
+    background-color: var(--primary-color);
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: var(--secondary-color); /* Make hover state more distinguishable */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Toggle Button for Dark Mode */
+#toggleTheme {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#toggleTheme:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--card-background);
+    color: var(--text-color); /* Ensure input text is readable */
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: var(--primary-color);
+}
+
+/* Privacy Options */
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    color: var(--text-color); /* Ensure text is legible */
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li button {
+    width: 100%;
+    background-color: #f44336;
+    color: white;
+}
+
+/* Ensure Inputs in Dark Mode have Better Contrast */
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"] {
+    background-color: #333;           /* Dark input background */
+    color: #fff;                      /* White text in inputs */
+    border-color: #444;               /* Darker border for inputs */
+}
+
+body.dark-mode section {
+    background-color: #1e1e1e;        /* Darker section background in dark mode */
+    color: #90caf9;                    /* Lighter text for dark mode */
+}
+
+/* Dark Mode Button Adjustments */
+body.dark-mode button {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+body.dark-mode button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Privacy Options in Dark Mode */
+body.dark-mode ul li button {
+    background-color: #f44336; /* Keep the red color for danger buttons */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* End of settings.css */
